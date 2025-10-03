@@ -39,12 +39,30 @@ header {
 header a {
   font-size: 1.5rem;
   color: var(--off-white);
+  animation-name: changeColors;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: 1s;
+}
+
+@keyframes changeColors {
+  0%   {color: var(--off-white);}
+  50%  {color: greenyellow;}
+  100% {color: black;}
 }
 /* end header link animations */
 
 /* article link transitions */
 main a {
   color: var(--danger-color);
+  transition: all 3s;
+}
+
+main a:hover, main a:focus {
+  color: navy;
+  background-color: yellow;
+  font-size: 2rem;
 }
 /* end article link transitions */
 
@@ -100,6 +118,14 @@ section.hero > button {
   border-radius: 12px;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all;
+}
+
+section.hero > button:hover, section.hero > button:focus {
+  background-color: teal;
+  color: white;
+  border: navy;
+  transform: rotate(180deg) scaleX(-1);
 }
 
 main article {
